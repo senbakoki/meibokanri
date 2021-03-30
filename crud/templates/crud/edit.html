@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if request.user.is_superuser %}
+<a href="{% url 'crud:index' %}">一覧画面へ</a>
+<form action="" method="post">
+    {{ form.errors.message }}
+    <label>{{ form.message.label }}{{ form.teacher_name }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time13_1 }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time13_2 }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time14_1 }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time14_2 }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time17_1 }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time17_2 }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time18_1 }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time18_2 }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time20_1 }}</label><br/>
+    <label>{{ form.message.label }}{{ form.time20_2 }}</label><br/>
+    {% csrf_token %}
+    <input type="submit" value="登録">
+</form>
+{% endif %}
+{% endblock %}
+
+    
